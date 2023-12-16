@@ -11,6 +11,12 @@ os.environ['KERAS_BACKEND'] = 'theano'
 app = Flask(__name__)
 CORS(app)
 # from google.colab.patches import cv2_imshow
+# from google.colab.patches import cv2_imshow
+current_directory = os.getcwd()
+
+# Construct the absolute path to the 'static' folder
+static_folder_path = os.path.join(current_directory, 'api')
+os.chdir(static_folder_path)
 file_list = os.listdir('./dataset/')
 # image2 = cv2.imread("download.png")
 image_files = [file for file in file_list if file.lower().endswith(('.jpg', '.jpeg', '.png'))]
