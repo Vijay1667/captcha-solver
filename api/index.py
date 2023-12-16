@@ -7,7 +7,7 @@ from flask import request
 import cv2
 import numpy as np
 import base64
-
+os.environ['KERAS_BACKEND'] = 'theano'
 app = Flask(__name__)
 CORS(app)
 # from google.colab.patches import cv2_imshow
