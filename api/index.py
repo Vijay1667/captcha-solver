@@ -11,7 +11,11 @@ import base64
 app = Flask(__name__)
 CORS(app)
 # from google.colab.patches import cv2_imshow
-file_list = os.listdir('./dataset/')
+current_directory = os.getcwd()
+
+# Construct the absolute path to the 'static' folder
+static_folder_path = os.path.join(current_directory, 'api')
+os.chdir(static_folder_path)
 # image2 = cv2.imread("download.png")
 image_files = [file for file in file_list if file.lower().endswith(('.jpg', '.jpeg', '.png'))]
 aton = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0, 'F': 0, 'G': 0, 'H': 0, 'I': 0, 'J': 0, 'K': 0, 'L': 0, 'M': 0, 'N': 0,  'P': 0, 'Q': 0, 'R': 0, 'S': 0, 'T': 0, 'U': 0, 'V': 0, 'W': 0, 'X': 0, 'Y': 0, 'Z': 0,0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
