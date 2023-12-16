@@ -130,6 +130,9 @@ for image_file_test in image_files_test:
         # cv2.imshow(gray_image)
     print(captcha)
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
 
 @app.route('/evalcaptcha',methods=['POST'])
 def about():
@@ -191,3 +194,8 @@ def about():
     # cv2.imshow('Decoded Image', image)
     # cv2.waitKey(0)
     return captcha
+
+
+@app.route('/about')
+def about():
+    return 'About'
