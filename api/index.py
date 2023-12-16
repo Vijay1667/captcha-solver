@@ -136,6 +136,9 @@ for image_file_test in image_files_test:
         # cv2.imshow(gray_image)
     print(captcha)
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
 
 @app.route('/evalcaptcha',methods=['POST'])
 def about():
